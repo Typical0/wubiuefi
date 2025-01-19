@@ -6,6 +6,10 @@ python_md5="db6ad9195b3086c6b4cefb9493d738d2"
 p7zip_url="https://downloads.sourceforge.net/project/sevenzip/7-Zip/9.20/7z920.msi"
 p7zip_md5="9bd44a22bffe0e4e0b71b8b4cf3a80e2"
 
+#Compiled modules
+pycrypto_url="https://web.archive.org/web/20200502114359/http://www.voidspace.org.uk/downloads/pycrypto26/pycrypto-2.6.win32-py2.7.exe"
+pycrypto_md5="e7875e7f6bf0b23701bdd5ef1d8679cd"
+
 # Ubuntu packages for mingw32
 mingw32_url="http://archive.ubuntu.com/ubuntu/pool/universe/m/mingw32/mingw32_4.2.1.dfsg-2ubuntu1_"
 mingw32_binutils_url="http://archive.ubuntu.com/ubuntu/pool/universe/m/mingw32-binutils/mingw32-binutils_2.20-0.2ubuntu1_"
@@ -76,7 +80,8 @@ install_mock(){
 
 install_pycrypto(){
 	echo "Installing pycrypto..."
-    wine "$python_dir/python.exe" -m pip install pycryptodome
+    download "$pycrypto_url" "/tmp/pycrypto.exe" "$pycrypto_md5"
+     wine "/tmp/pycrypto.exe"
 }
 
 if [ ! -e "$root/wine" ]; then
