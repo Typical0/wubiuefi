@@ -1,3 +1,13 @@
+wubi (22.04.5r347) jammy; urgency=low
+
+  [Typical0]
+
+  * Bump to 22.04.5
+  * Removed i386 editions as they are not available anymore
+  * Removed daily jammy filelists cause they are are deprecated
+  * Fix metalinks for Wubi lz4-amd64
+  * new desktop environment "Wubi zstd"
+
 wubi (22.04.4r346) jammy; urgency=low
 
   [Hakuna Matata]
